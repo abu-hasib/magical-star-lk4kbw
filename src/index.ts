@@ -21,7 +21,10 @@ async function startApolloServer() {
         schema: makeExecutableSchema({typeDefs}),
         mocks
     })})
-    const { url }  = await startStandaloneServer(server)
+    const { url }  = await startStandaloneServer(server, {
+        listen: {
+        port: Number(process.env.PORT) || 4000,
+    }})
     console.log(`
     🚀  Server is running!
     📭  Query at ${url}
