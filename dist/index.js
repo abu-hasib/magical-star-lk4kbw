@@ -34,7 +34,11 @@ function startApolloServer() {
                 schema: (0, schema_2.makeExecutableSchema)({ typeDefs: schema_1.default }),
                 mocks
             }) });
-        const { url } = yield (0, standalone_1.startStandaloneServer)(server);
+        const { url } = yield (0, standalone_1.startStandaloneServer)(server, {
+            listen: {
+                port: Number(process.env.PORT) || 4000,
+            }
+        });
         console.log(`
     🚀  Server is running!
     📭  Query at ${url}
