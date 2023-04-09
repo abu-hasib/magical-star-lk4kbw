@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node",
     "dev": "nodemon",
     "watch": "tsc -w",
     "build": "echo This is a static template, there is no bundler or bundling involved!"
